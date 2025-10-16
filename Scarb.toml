@@ -1,0 +1,27 @@
+[package]
+cairo-version = "2.12.2"
+name = "starkguessr"
+version = "1.0.0"
+edition = "2024_07"
+
+[cairo]
+sierra-replace-ids = true
+
+[scripts]
+migrate = "sozo build && sozo migrate"
+create_game = "sozo execute starkguessr-actions create_game -c 0x1234567890abcdef --wait"
+join_game = "sozo execute starkguessr-actions join_game -c 1 --wait"
+
+[dependencies]
+dojo = "1.7.1"
+starknet = "2.12.2"
+
+[[target.starknet-contract]]
+build-external-contracts = ["dojo::world::world_contract::world"]
+
+[tool.scarb]
+allow-prebuilt-plugins = ["dojo_cairo_macros"]
+
+[dev-dependencies]
+cairo_test = "2.12.2"
+dojo_cairo_test = "1.7.1"
