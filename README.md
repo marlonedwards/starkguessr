@@ -247,10 +247,5 @@ starkguessr-dojo/
 - [Cartridge Docs](https://docs.cartridge.gg)
 - [Starknet Book](https://book.starknet.io)
 
-## License
-
-MIT
-
----
-
 Built for Starknet Re{solve} Hackathon 2025
+
